@@ -15,13 +15,10 @@ def login_user(request):
         if user is not None:
             login(request, user)
             # Redirect to a success page.
-            return redirect('succesful_login')
-
+            return redirect('home')
         else:
             # Return an 'invalid login' error message.
             return redirect('error_login')
-
-
 
     return render(request, 'main/login_user.html', {})
 
@@ -41,9 +38,6 @@ def register(request):
         return redirect('home')
 
     return render(request, 'main/register.html', {})
-
-def succesful_login(request):
-    return render(request, "main/succesful_login.html", {})
 
 def error_login(request):
     return render(request, "main/error_login.html", {})
