@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Register Account</h1>
+<p>register your account here!</p>
+<form method="POST" action="">
+    {% csrf_token %}
+    <label>Enter Email Address: </label>
+    <input type="email" name="email">
+    <label>Enter Username:</label>
+    <input type="text" name="username" />
+    <label>Enter Password:</label>
+    <input type="password", name="password" />
+    <input type="submit" />
+</form>
+<hr>
+<a href="{% url 'home' %}">Home</a>
+{% endblock %}
